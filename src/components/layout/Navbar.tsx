@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Logo } from '../ui/Logo';
+import INSOLogo from '../ui/INSOLogo';
 import { LangToggle } from '../ui/LangToggle';
 import { useLang } from '../../hooks/useLang';
 import { Menu, X } from 'lucide-react';
@@ -18,10 +18,15 @@ export const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
+  // Links that route to separate pages
+  const routedLinks = [
+    { name: t.nav.ourWork[lang], to: '/our-work' },
+    { name: t.nav.about[lang], to: '/about' },
+  ];
+
+  // Links that anchor-scroll on the home page
+  const anchorLinks = [
     { name: t.nav.services[lang], href: '#services' },
-    { name: t.nav.products[lang], href: '#products' },
-    { name: t.nav.about[lang], href: '#about' },
     { name: t.nav.contact[lang], href: '#contact' },
   ];
 
@@ -31,21 +36,38 @@ export const Navbar: React.FC = () => {
         
         {/* Left: Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <Logo className="w-10 h-12" />
-          <span className="text-white font-bebas text-2xl tracking-wider hidden sm:block">INSO</span>
+          <INSOLogo size={48} />
+          <div className="flex flex-col leading-tight">
+            <span className="font-bebas text-xl tracking-widest text-orange">INSO</span>
+            <span className="text-xs text-white/70 font-cairo hidden sm:block">
+              {lang === 'ar' ? 'الحلول الصناعية' : 'Industrial Solutions'}
+            </span>
+          </div>
         </Link>
 
         {/* Center: Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link, idx) => (
-            <a 
+          <a 
+            href={anchorLinks[0].href} 
+            className="text-white hover:text-orange transition-colors font-semibold text-sm uppercase tracking-wide"
+          >
+            {anchorLinks[0].name}
+          </a>
+          {routedLinks.map((link, idx) => (
+            <Link 
               key={idx} 
-              href={link.href} 
+              to={link.to} 
               className="text-white hover:text-orange transition-colors font-semibold text-sm uppercase tracking-wide"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
+          <a 
+            href={anchorLinks[1].href} 
+            className="text-white hover:text-orange transition-colors font-semibold text-sm uppercase tracking-wide"
+          >
+            {anchorLinks[1].name}
+          </a>
         </nav>
 
         {/* Right: Actions */}
@@ -66,16 +88,30 @@ export const Navbar: React.FC = () => {
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-[72px] left-0 w-full bg-navy-dark shadow-xl border-t border-white/10">
           <nav className="flex flex-col py-4">
-            {navLinks.map((link, idx) => (
-              <a 
+            <a 
+              href={anchorLinks[0].href} 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-white px-6 py-4 hover:bg-white/5 font-semibold text-lg border-b border-white/5"
+            >
+              {anchorLinks[0].name}
+            </a>
+            {routedLinks.map((link, idx) => (
+              <Link 
                 key={idx} 
-                href={link.href} 
+                to={link.to} 
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-white px-6 py-4 hover:bg-white/5 font-semibold text-lg border-b border-white/5 last:border-0"
+                className="text-white px-6 py-4 hover:bg-white/5 font-semibold text-lg border-b border-white/5"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
+            <a 
+              href={anchorLinks[1].href} 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-white px-6 py-4 hover:bg-white/5 font-semibold text-lg border-b border-white/5 last:border-0"
+            >
+              {anchorLinks[1].name}
+            </a>
           </nav>
         </div>
       )}

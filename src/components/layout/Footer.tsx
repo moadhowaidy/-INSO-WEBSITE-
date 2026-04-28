@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLang } from '../../hooks/useLang';
-import { Logo } from '../ui/Logo';
+import INSOLogo from '../ui/INSOLogo';
 
 export const Footer: React.FC = () => {
   const { lang, t } = useLang();
@@ -13,7 +13,7 @@ export const Footer: React.FC = () => {
           {/* Brand Col */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <Logo className="w-12 h-14" />
+              <INSOLogo size={48} />
               <span className="text-white font-bebas text-3xl tracking-wider">INSO</span>
             </div>
             <p className="leading-relaxed mb-6">

@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useLang } from '../../hooks/useLang';
 
-import { Logo } from '../ui/Logo';
+import INSOLogo from '../ui/INSOLogo';
 import { CheckCircle2 } from 'lucide-react';
 
 export const About: React.FC = () => {
@@ -35,7 +35,7 @@ export const About: React.FC = () => {
               <div className="absolute -top-6 -right-6 w-32 h-32 bg-orange/20 rounded-full blur-2xl" />
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-navy-light/40 rounded-full blur-2xl" />
               
-              <Logo className="w-full h-full text-white filter drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]" />
+              <INSOLogo size={160} />
               
               {/* ISO Badge accent */}
               <div className="absolute -bottom-8 -right-8 bg-orange text-white w-24 h-24 rounded-full flex items-center justify-center font-bold text-lg shadow-xl shadow-orange/20 rotate-12 border-4 border-navy-dark">

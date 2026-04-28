@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useLang } from '../../hooks/useLang';
-import { Logo } from '../ui/Logo';
+import INSOLogo from '../ui/INSOLogo';
 import { Button } from '../ui/Button';
 
 export const Hero: React.FC = () => {
@@ -74,7 +74,7 @@ export const Hero: React.FC = () => {
               {/* Glass Card Behind Logo */}
               <div className="absolute inset-0 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-2xl rotate-3" />
               <div className="absolute inset-0 flex items-center justify-center -rotate-3 p-8">
-                <Logo className="w-full h-full drop-shadow-2xl" />
+                <INSOLogo size={220} />
               </div>
             </div>
           </motion.div>

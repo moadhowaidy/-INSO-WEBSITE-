@@ -1,9 +1,15 @@
 export const t = {
   nav: {
     services:  { ar: "خدماتنا",       en: "Services"     },
-    products:  { ar: "المنتجات",       en: "Products"     },
+    ourWork:   { ar: "أعمالنا",        en: "Our Work"     },
     about:     { ar: "من نحن",         en: "About"        },
     contact:   { ar: "تواصل معنا",     en: "Contact Us"   },
+  },
+  ourWork: {
+    tag:   { ar: "أعمالنا",           en: "Our Work"                                     },
+    title: { ar: "مشاريعنا الميدانية", en: "Our Field Projects"                            },
+    sub:   { ar: "لقطات حقيقية من مشاريع منفذة في ليبيا",
+             en: "Real shots from completed projects across Libya"                          },
   },
   hero: {
     badge:     { ar: "أنظمة التحكم الصناعي المتكاملة", en: "Integrated Industrial Control Systems" },
