@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cairo:wght@400;600;700;900&family=Montserrat:wght@400;600;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --navy: #1A2770;
+    --navy-dark: #111A55;
+    --navy-light: #2E3D9E;
+    --orange: #D4601A;
+    --orange-light: #E8813F;
+    --white: #FFFFFF;
+    --gray-light: #F5F6FA;
+    --gray-mid: #E2E5F0;
+    --gray-text: #6B7280;
+    --text-dark: #0D1340;
+  }
+  
+  html {
+    font-family: 'Cairo', 'Montserrat', sans-serif;
+    color: var(--text-dark);
+  }
+  
+  html[dir="rtl"] {
+    font-family: 'Cairo', sans-serif;
+  }
+  
+  html[dir="ltr"] {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', sans-serif;
+}
