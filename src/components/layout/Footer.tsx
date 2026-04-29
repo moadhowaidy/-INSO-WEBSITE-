@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold mb-6 text-lg">{t.nav.contact[lang]}</h4>
             <address className="not-italic space-y-3">
-              <p>info@inso.ly</p>
+              <p><a href="mailto:info@inso.ly" className="hover:text-orange transition-colors">info@inso.ly</a></p>
               <p dir="ltr">+218 91 031 7993</p>
               <p dir="ltr">+218 92 121 3089</p>
               <p>{t.contact.address[lang]}</p>

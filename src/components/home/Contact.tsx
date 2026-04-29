@@ -97,15 +97,15 @@ export const Contact: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-6 group">
+              <a href="mailto:info@inso.ly" className="flex items-start gap-6 group cursor-pointer" style={{ textDecoration: 'none' }}>
                 <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm text-navy group-hover:bg-navy group-hover:text-white transition-colors duration-300 flex-shrink-0">
                   <Mail size={24} />
                 </div>
                 <div>
-                  <h4 className="font-bold text-text-dark mb-1">Email</h4>
-                  <p className="text-gray-text">info@inso.ly</p>
+                  <h4 className="font-bold text-text-dark mb-1 group-hover:text-orange transition-colors">Email</h4>
+                  <p className="text-gray-text group-hover:text-orange transition-colors">info@inso.ly</p>
                 </div>
-              </div>
+              </a>
             </div>
           </motion.div>
 
