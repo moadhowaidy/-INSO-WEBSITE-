@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLang } from '../../hooks/useLang';
 import INSOLogo from '../ui/INSOLogo';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   const { lang, t } = useLang();
@@ -27,7 +28,7 @@ export const Footer: React.FC = () => {
             <ul className="space-y-3">
               {t.services.items.slice(0, 4).map((service, idx) => (
                 <li key={idx}>
-                  <a href="#services" className="hover:text-orange transition-colors">
+                  <a href={`/#services`} className="hover:text-orange transition-colors">
                     {service[lang].title}
                   </a>
                 </li>
@@ -39,8 +40,8 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold mb-6 text-lg">{t.nav.about[lang]}</h4>
             <ul className="space-y-3">
-              <li><a href="#about" className="hover:text-orange transition-colors">{t.nav.about[lang]}</a></li>
-              <li><a href="#contact" className="hover:text-orange transition-colors">{t.nav.contact[lang]}</a></li>
+              <li><Link to="/about" className="hover:text-orange transition-colors">{t.nav.about[lang]}</Link></li>
+              <li><a href="/#contact" className="hover:text-orange transition-colors">{t.nav.contact[lang]}</a></li>
             </ul>
           </div>
 

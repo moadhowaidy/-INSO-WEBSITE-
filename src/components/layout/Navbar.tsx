@@ -26,8 +26,8 @@ export const Navbar: React.FC = () => {
 
   // Links that anchor-scroll on the home page
   const anchorLinks = [
-    { name: t.nav.services[lang], href: '#services' },
-    { name: t.nav.contact[lang], href: '#contact' },
+    { name: t.nav.services[lang], href: '/#services' },
+    { name: t.nav.contact[lang], href: '/#contact' },
   ];
 
   return (
