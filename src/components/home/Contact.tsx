@@ -39,9 +39,50 @@ export const Contact: React.FC = () => {
                 <div className="w-14 h-14 bg-white rounded-xl flex items-center justify-center shadow-sm text-navy group-hover:bg-navy group-hover:text-white transition-colors duration-300 flex-shrink-0">
                   <MapPin size={24} />
                 </div>
-                <div>
+                <div className="flex-1 overflow-hidden">
                   <h4 className="font-bold text-text-dark mb-1">HQ & Branch</h4>
                   <p className="text-gray-text">{t.contact.address[lang]}</p>
+
+                  {/* Google Maps Embed — placed below address info block */}
+                  <div
+                    style={{
+                      marginTop: '24px',
+                      borderRadius: '16px',
+                      overflow: 'hidden',
+                      border: '1px solid rgba(255,255,255,0.1)',  /* subtle border on dark sections */
+                      width: '100%',
+                      height: '260px',
+                      flexShrink: 0,
+                    }}
+                  >
+                    <iframe
+                      title={lang === 'ar' ? 'موقعنا على الخريطة' : 'Our location on the map'}
+                      src="https://maps.google.com/maps?q=32.8872,13.1800&z=15&output=embed"
+                      width="100%"
+                      height="260"
+                      style={{ border: 0, display: 'block' }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    />
+                  </div>
+                  <a
+                    href="https://maps.app.goo.gl/HbvodyYQ1LHZRjJF9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      marginTop: '10px',
+                      fontSize: '13px',
+                      color: '#D4601A',
+                      textDecoration: 'none',
+                      fontWeight: 600,
+                    }}
+                  >
+                    {lang === 'ar' ? 'فتح في خرائط Google ←' : 'Open in Google Maps →'}
+                  </a>
                 </div>
               </div>
 

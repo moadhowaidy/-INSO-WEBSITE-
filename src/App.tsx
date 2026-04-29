@@ -6,6 +6,7 @@ import { Footer } from './components/layout/Footer';
 import { Home } from './pages/Home';
 import AboutPage from './pages/AboutPage';
 import OurWorkPage from './pages/OurWorkPage';
+import WhatsAppButton from './components/ui/WhatsAppButton';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             </Routes>
           </div>
           <Footer />
+          <WhatsAppButton />
         </div>
       </Router>
     </LangProvider>
