@@ -58,8 +58,13 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-          <p>© {new Date().getFullYear()} INSO. {t.footer.copyright[lang]}.</p>
+        <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-center md:text-start">
+          <div>
+            <p>© {new Date().getFullYear()} INSO. {t.footer.copyright[lang]}.</p>
+            <p className="mt-1 text-xs text-white/50">
+              Powered by <a href="https://swiftscaled.com" target="_blank" rel="noopener noreferrer" style={{ color: '#8A0303' }}>SWIFTSCAL</a>
+            </p>
+          </div>
           <p className="text-white/40">Industrial Solutions for Industrial Control Systems</p>
         </div>
       </div>
